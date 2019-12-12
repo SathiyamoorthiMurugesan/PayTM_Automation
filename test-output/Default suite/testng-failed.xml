@@ -5,8 +5,7 @@
     <classes>
       <class name="org.paytm.testcases.PrePaid">
         <methods>
-          <include name="prepaid"/>
-          <include name="startUp"/>
+          <include name="click_prepaidlink"/>
         </methods>
       </class> <!-- org.paytm.testcases.PrePaid -->
     </classes>
