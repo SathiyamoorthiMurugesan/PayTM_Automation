@@ -2,22 +2,21 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-12-07T11:41:32Z" name="Default suite" finished-at="2019-12-07T11:41:32Z" duration-ms="42">
+  <suite started-at="2019-12-12T03:35:46Z" name="Default suite" finished-at="2019-12-12T03:35:46Z" duration-ms="74">
     <groups>
     </groups>
-    <test started-at="2019-12-07T11:41:32Z" name="Default test" finished-at="2019-12-07T11:41:32Z" duration-ms="42">
+    <test started-at="2019-12-12T03:35:46Z" name="Default test" finished-at="2019-12-12T03:35:46Z" duration-ms="74">
       <class name="org.paytm.testcases.PrePaid">
-        <test-method is-config="true" signature="startUp()[pri:0, instance:org.paytm.testcases.PrePaid@2a7f1f10]" started-at="2019-12-07T11:41:13Z" name="startUp" finished-at="2019-12-07T11:41:32Z" duration-ms="19174" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- startUp -->
-        <test-method signature="prepaid()[pri:0, instance:org.paytm.testcases.PrePaid@2a7f1f10]" started-at="2019-12-07T11:41:32Z" name="prepaid" finished-at="2019-12-07T11:41:32Z" duration-ms="9" status="FAIL">
+        <test-method signature="click_prepaidlink()[pri:0, instance:org.paytm.testcases.PrePaid@1c7696c6]" started-at="2019-12-12T03:35:46Z" name="click_prepaidlink" finished-at="2019-12-12T03:35:46Z" duration-ms="20" status="FAIL">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
-at org.paytm.base.BaseClass.elemenToBeClicked(BaseClass.java:81)
-at org.paytm.base.MainClass.click_prepaidlink(MainClass.java:28)
-at org.paytm.testcases.PrePaid.prepaid(PrePaid.java:29)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy9.click(Unknown Source)
+at org.paytm.base.BaseClass.elemenToBeClicked(BaseClass.java:47)
+at org.paytm.base.MainClass.click_prepaidlink(MainClass.java:30)
+at org.paytm.testcases.PrePaid.click_prepaidlink(PrePaid.java:13)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -48,7 +47,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- prepaid -->
+        </test-method> <!-- click_prepaidlink -->
       </class> <!-- org.paytm.testcases.PrePaid -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

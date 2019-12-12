@@ -18,7 +18,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
 public class BaseClass {
-	WebDriver driver;
+	public static WebDriver driver;
 	String browser;
 	String url;
 	Properties prop;
@@ -27,19 +27,24 @@ public class BaseClass {
 	
 	@BeforeSuite
 	public void startUp() throws Exception {
-		browserSelection();
+		System.setProperty("webdriver.chrome.driver", ".\\driver\\chromerdriver.exe");
+		driver = new ChromeDriver();
+		//browserSelection();
 	}
 	
-	@Test
+/*	@Test
 	public void openWebSite() throws Exception {
 		elemenToBeClicked(driver.findElement(By.linkText("Mobile Prepaid")));
 		takeScreenshot();
-	}
+	}*/
 	
-	@AfterSuite
+	@AfterSuite 
 	public void tearDown() {
 		driver.quit();
-		
+	}
+	
+	public void elemenToBeClicked(WebElement clickEle) {
+		clickEle.click();
 	}
 	
 	public void propertyReader() throws Exception {
@@ -56,17 +61,16 @@ public class BaseClass {
 		case "chrome":
 			System.setProperty("webdriver.chrome.driver", ".\\driver\\chromerdriver.exe");
 			driver = new ChromeDriver();
-			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			driver.get(url);
 			
 		case "firefox":
 			System.setProperty("webdriver.firefox.marionette", "C:\\geckodriver.exe");
 			driver = new FirefoxDriver();
-			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			driver.get(url);
 		}
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get(url);
+		//return driver;
+		
 	}	
 	public void takeScreenshot() throws Exception {
 		screenshot_path = prop.getProperty("screeshot_path");
@@ -77,9 +81,7 @@ public class BaseClass {
 		FileUtils.copyFile(file, new File(screenshot_path+""+dateformat.format(date)+".png"));
 	}
 	
-	public void elemenToBeClicked(WebElement clickEle) {
-		clickEle.click();
-	}
+	
 	
 	public void textToBeSent(WebElement sendText, String Text) { 
 		sendText.sendKeys(Text);

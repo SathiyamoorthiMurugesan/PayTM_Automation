@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\sathy\AppData\Local\Temp\testng-eclipse--96285553\testng-customsuite.xml</span>
+                    <span>C:\Users\sathy\AppData\Local\Temp\testng-eclipse-420212806\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="org.paytm.testcases.PrePaid" class="method navigator-link" hash-for-method="prepaid">prepaid</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="org.paytm.testcases.PrePaid" class="method navigator-link" hash-for-method="click_prepaidlink">click_prepaidlink</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -125,13 +125,16 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="prepaid">
-                  </a> <!-- prepaid -->
-                  <span class="method-name">prepaid</span>
+                  <a name="click_prepaidlink">
+                  </a> <!-- click_prepaidlink -->
+                  <span class="method-name">click_prepaidlink</span>
                   <div class="stack-trace">java.lang.NullPointerException
-	at org.paytm.base.BaseClass.elemenToBeClicked(BaseClass.java:81)
-	at org.paytm.base.MainClass.click_prepaidlink(MainClass.java:28)
-	at org.paytm.testcases.PrePaid.prepaid(PrePaid.java:29)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.click(Unknown Source)
+	at org.paytm.base.BaseClass.elemenToBeClicked(BaseClass.java:47)
+	at org.paytm.base.MainClass.click_prepaidlink(MainClass.java:30)
+	at org.paytm.testcases.PrePaid.click_prepaidlink(PrePaid.java:13)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -166,7 +169,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\sathy\AppData\Local\Temp\testng-eclipse--96285553\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\sathy\AppData\Local\Temp\testng-eclipse-420212806\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -217,14 +220,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'prepaid')
+data.setCell(0, 1, 'click_prepaidlink')
 data.setCell(0, 2, 'org.paytm.testcases.PrePaid')
-data.setCell(0, 3, 9);
+data.setCell(0, 3, 20);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 9 ms</span>
+              <span class="suite-total-time">Total running time: 20 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -251,15 +254,11 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">org.paytm.testcases.PrePaid</div> <!-- chronological-class-name -->
-              <div class="configuration-suite before">
-                <span class="method-name">startUp</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-suite before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">prepaid</span>
-                <span class="method-start">19201 ms</span>
+                <span class="method-name">click_prepaidlink</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
