@@ -2,6 +2,14 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>POMPattern</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+<repositories>
+    <repository>
+        <id>jcenter</id>
+        <name>jcenter</name>
+        <url>http://jcenter.bintray.com</url>
+    </repository>
+</repositories>  
+  
 <dependencies>
   
   <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -10,9 +18,26 @@
     <artifactId>selenium-java</artifactId>
     <version>3.141.59</version>
 </dependency>
+
+<dependency>
+  <groupId>org.testng</groupId>
+  <artifactId>testng</artifactId>
+  <version>7.0.0</version>
+  <scope>test</scope>
+</dependency>
+
+ <dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>4.0.9</version>
+</dependency>
+
+
   
   </dependencies>
   
 	<groupId>POMPatter</groupId>
+	
+
 </project>
 
