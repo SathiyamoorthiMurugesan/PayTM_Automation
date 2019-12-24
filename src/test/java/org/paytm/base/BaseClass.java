@@ -9,11 +9,10 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MaximizeAction;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.TakesScreenshot;
@@ -29,6 +28,7 @@ import org.testng.annotations.*;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class BaseClass{
@@ -114,6 +114,7 @@ public class BaseClass{
 	
 	public void maximizeWindow() {
 		getDriver().manage().window().maximize();
+		logger.info("Browser is maxmized");
 	}
 	
 	public void makeFullScreen() {
@@ -160,12 +161,28 @@ public class BaseClass{
 		sendText.sendKeys(Text);
 	}
 
-	public void clearText(WebElement clear) {
-		clear.click();
+	public void clearTextField(WebElement clear) {
+		clear.clear();
 	}
 	
 	public String getAttributeofElement (WebElement getAttribute, String Text) {
 		return getAttribute.getAttribute(Text);
+	}
+	
+	public String  getWebElementText(WebElement element) {
+		return element.getText();
+	}
+	
+	public boolean iselementDisplaying(WebElement element) {
+		return element.isDisplayed();
+	}
+	
+	public boolean iselementSelected(WebElement element) {
+		return element.isSelected();
+	}
+	
+	public boolean iselementEnabled(WebElement element) {
+		return element.isEnabled();
 	}
 	
 	public void elemenToBeClicked(WebElement clickElement) {
@@ -260,6 +277,29 @@ public class BaseClass{
 		alert.sendKeys(text);
 	}
 	
+	public void getAlertText() {
+		Alert alert = getDriver().switchTo().alert();
+		String alert_Text =  alert.getText();
+		logger.info(alert_Text);
+	}
+	
+	public void moveFrameWebElement(WebElement frameElement) {
+		getDriver().switchTo().frame(frameElement);
+	}
+	
+	public void moveFrameIndex (int frameIndex) {
+		getDriver().switchTo().frame(frameIndex);
+	}
+	
+	public void getOutOfFrame() {
+		getDriver().switchTo().defaultContent();
+	}
+	
+	public void getNoOfFrames(WebElement frameElement) {
+		frameElement.getSize();
+	}
+	
+	
 	public void selectByIndex(WebElement byIndex, int indexnumber) {
 		Select dropdown = new Select(byIndex);
 		dropdown.selectByIndex(indexnumber);
@@ -318,7 +358,7 @@ public class BaseClass{
 	
 	public void mouseHoverClick(WebElement mouseClickElement) {
 		Actions action = new Actions(getDriver());
-		action.moveToElement(mouseClickElement).build().perform();
+		action.moveToElement(mouseClickElement).click().build().perform();
 	}
 	
 	public void doubleClick(WebElement doubleClickElement) {
@@ -333,17 +373,37 @@ public class BaseClass{
 		
 	}
 	
+	public void clickAndHold(WebElement clickAndHoldElement) {
+		Actions action = new Actions(getDriver());
+		action.clickAndHold(clickAndHoldElement);
+	}
 	
+	public void dragElementToPosition(WebElement dragElement, int xOffset, int yOffset) {
+		Actions action = new Actions(getDriver());
+		action.moveToElement(dragElement, xOffset, yOffset).perform();
+	}
 	
+	public void dragAndDropAtTarget(WebElement source, WebElement target) {
+		Actions action = new Actions(getDriver());
+		action.dragAndDrop(source, target).build().perform();
+	}
 	
+	public void dragAndDropAtPosition(WebElement source, int xOffset, int yOffset) {
+		Actions action = new Actions(getDriver());
+		action.dragAndDropBy(source, xOffset, yOffset).build().perform();
+	}
 	
+	public void uploadViaPath(WebElement element, String path) {
+		element.sendKeys(path);
+	}
 	
+	public void pressTabKeyAfterWebElement(WebElement element) {
+		element.sendKeys(Keys.TAB);
+	}
 	
-	
-	
-	
-	
-	
+	public void pressEnterKeyAfterWebElement(WebElement element) {
+		element.sendKeys(Keys.ENTER);
+	}
 	
 	
 	
