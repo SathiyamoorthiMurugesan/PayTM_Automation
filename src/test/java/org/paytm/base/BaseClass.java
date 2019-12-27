@@ -404,7 +404,7 @@ public class BaseClass{
 	public void pressEnterKeyAfterWebElement(WebElement element) {
 		element.sendKeys(Keys.ENTER);
 	}
-//	have to update scroll down methods
+
 	
 	
 }
