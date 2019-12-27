@@ -9,6 +9,7 @@
           <include name="browserSelection"/>
           <include name="initiateReport"/>
           <include name="tearDown"/>
+          <include name="homepage_playAndWin"/>
           <include name="closeReport"/>
         </methods>
       </class> <!-- org.paytm.testcases.PrePaid -->

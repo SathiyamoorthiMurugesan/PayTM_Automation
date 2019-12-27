@@ -1,0 +1,24 @@
+Updates needs to be done in Base class
+
+1) excel reading
+2) json reading 
+3) log4J report
+4) scrolling window
+
+
+
+Jenkins leanring
+
+
+Cucumber framework learning
+
+
+collections
+
+
+TestNG
+
+1) Parameters
+2) parllel running
+3) grouping
+4) running failed cases again

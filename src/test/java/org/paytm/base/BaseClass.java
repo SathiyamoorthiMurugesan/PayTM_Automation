@@ -49,7 +49,8 @@ public class BaseClass{
 	public  static void initiateReport() {
 		Date date = new Date();
 		SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
-		reporter = new ExtentHtmlReporter("C://Users//sathy//git//repository2//POMPattern//Reports//MyReport"+dateformat.format(date)+".html");
+		reporter = new ExtentHtmlReporter("C:\\Users\\sathy\\git\\PayTM_Automatio\\Reports\\MyReport"+dateformat.format(date)+".html");
+//		reporter = new ExtentHtmlReporter("C:\\Users\\sathy\\git\\PayTM_Automation\\Reports\\reports.html");
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 	}
@@ -63,14 +64,15 @@ public class BaseClass{
 	public static void closeReport() {
 		extent.flush();
 	}
-			
+	
+	@Parameters({"browser"})
 	@BeforeSuite
-	public void browserSelection() throws Exception {
+	public void browserSelection(String browser) throws Exception {
 		reporter = new ExtentHtmlReporter("myreport.html");
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 		propertyReader();
-		browser = prop.getProperty("browser");
+		//browser = prop.getProperty("browser");
 		url = prop.getProperty("url");
 		switch(browser) {
 		case "chrome":
@@ -369,8 +371,6 @@ public class BaseClass{
 	public void rightClick(WebElement rightClickElement) {
 		Actions action = new Actions(getDriver());
 		action.contextClick(rightClickElement).perform();
-//		action.clickAndHold(rightClickElement);
-		
 	}
 	
 	public void clickAndHold(WebElement clickAndHoldElement) {
@@ -404,10 +404,7 @@ public class BaseClass{
 	public void pressEnterKeyAfterWebElement(WebElement element) {
 		element.sendKeys(Keys.ENTER);
 	}
-	
-	
-	
-	
+//	have to update scroll down methods
 	
 	
 }
