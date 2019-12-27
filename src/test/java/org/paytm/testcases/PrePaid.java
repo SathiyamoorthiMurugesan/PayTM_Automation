@@ -11,7 +11,7 @@ public class PrePaid extends BaseClass{
 	mc =  new MainClass();
 		mc.MobilePrepaid_recharge();   
 	}
-//@Test
+@Test
 	public void homepage_playAndWin() {
 	mc =  new MainClass();
 		mc.HomePage_playWin();
