@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-12-25T21:21:27 IST" name="Suite" finished-at="2019-12-25T21:21:38 IST" duration-ms="10927">
+  <suite started-at="2020-01-04T20:41:39 IST" name="Suite" finished-at="2020-01-04T20:41:41 IST" duration-ms="2201">
     <groups>
     </groups>
-    <test started-at="2019-12-25T21:21:27 IST" name="Test" finished-at="2019-12-25T21:21:38 IST" duration-ms="10927">
-      <class name="org.paytm.testcases.PrePaid">
-        <test-method is-config="true" signature="browserSelection(java.lang.String)[pri:0, instance:org.paytm.testcases.PrePaid@738dc9b]" started-at="2019-12-25T21:21:09 IST" name="browserSelection" finished-at="2019-12-25T21:21:27 IST" duration-ms="17610" status="PASS">
+    <test started-at="2020-01-04T20:41:39 IST" name="Test" finished-at="2020-01-04T20:41:41 IST" duration-ms="2201">
+      <class name="org.paytm.testcases.PostPaidTest">
+        <test-method is-config="true" signature="browserSelection(java.lang.String)[pri:0, instance:org.paytm.testcases.PostPaidTest@6d4d66d2]" started-at="2020-01-04T20:41:19 IST" name="browserSelection" finished-at="2020-01-04T20:41:39 IST" duration-ms="19960" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,27 +18,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserSelection -->
-        <test-method is-config="true" signature="initiateReport()[pri:0, instance:org.paytm.testcases.PrePaid@738dc9b]" started-at="2019-12-25T21:21:27 IST" name="initiateReport" finished-at="2019-12-25T21:21:27 IST" duration-ms="8" status="PASS">
+        <test-method is-config="true" signature="initiateReport()[pri:0, instance:org.paytm.testcases.PostPaidTest@6d4d66d2]" started-at="2020-01-04T20:41:39 IST" name="initiateReport" finished-at="2020-01-04T20:41:39 IST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initiateReport -->
-        <test-method signature="homepage_playAndWin()[pri:0, instance:org.paytm.testcases.PrePaid@738dc9b]" started-at="2019-12-25T21:21:27 IST" name="homepage_playAndWin" finished-at="2019-12-25T21:21:27 IST" duration-ms="761" status="PASS">
+        <test-method signature="postPaid_page_verification()[pri:0, instance:org.paytm.testcases.PostPaidTest@6d4d66d2]" started-at="2020-01-04T20:41:39 IST" name="postPaid_page_verification" finished-at="2020-01-04T20:41:40 IST" duration-ms="1247" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- homepage_playAndWin -->
-        <test-method signature="prepaid_recharge()[pri:0, instance:org.paytm.testcases.PrePaid@738dc9b]" started-at="2019-12-25T21:21:27 IST" name="prepaid_recharge" finished-at="2019-12-25T21:21:37 IST" duration-ms="9484" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- prepaid_recharge -->
-        <test-method is-config="true" signature="closeReport()[pri:0, instance:org.paytm.testcases.PrePaid@738dc9b]" started-at="2019-12-25T21:21:37 IST" name="closeReport" finished-at="2019-12-25T21:21:38 IST" duration-ms="627" status="PASS">
+        </test-method> <!-- postPaid_page_verification -->
+        <test-method is-config="true" signature="closeReport()[pri:0, instance:org.paytm.testcases.PostPaidTest@6d4d66d2]" started-at="2020-01-04T20:41:40 IST" name="closeReport" finished-at="2020-01-04T20:41:41 IST" duration-ms="912" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeReport -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.paytm.testcases.PrePaid@738dc9b]" started-at="2019-12-25T21:21:38 IST" name="tearDown" finished-at="2019-12-25T21:21:39 IST" duration-ms="915" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.paytm.testcases.PostPaidTest@6d4d66d2]" started-at="2020-01-04T20:41:41 IST" name="tearDown" finished-at="2020-01-04T20:41:41 IST" duration-ms="483" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- org.paytm.testcases.PrePaid -->
+      </class> <!-- org.paytm.testcases.PostPaidTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

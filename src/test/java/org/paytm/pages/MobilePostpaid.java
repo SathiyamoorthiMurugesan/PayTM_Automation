@@ -6,19 +6,22 @@ import org.paytm.base.BaseClass;
 
 public class MobilePostpaid extends BaseClass{
 	
-	@FindBy(xpath="//div[@class=\"qvWr\"]")
+	@FindBy (xpath="//*[@title='Mobile Postpaid']/div")
+	WebElement PostPaidLink;
+	
+	@FindBy(className="qvWr")
 	WebElement PostPaidTitle;
 
-	@FindBy(xpath="(//*[@id=\"app\"]//label)[2]")
+	@FindBy(xpath="(//*[@id='app']//label)[2]")
 	WebElement PostPaidRadioButton;
 	
-	@FindBy(xpath="//*[@type=\"tel\"]")
+	@FindBy(xpath="//*[@type='tel']")
 	WebElement PostPaidMobileNumber;
 	
-	@FindBy(xpath="(//*[@type=\"text\"])[1])")
+	@FindBy(xpath="(//*[@type='text'])[1])")
 	WebElement PostPaidProvider;
 	
-	@FindBy(xpath="(//*[@type=\"text\"])[1]")
+	@FindBy(xpath="(//*[@type='text'])[1]")
 	WebElement PostPaidAmount;
 	
 	@FindBy(className="_1nFl")
@@ -46,6 +49,10 @@ public class MobilePostpaid extends BaseClass{
 
 	public WebElement getPostPaidFastForward() {
 		return PostPaidFastForward;
+	}
+
+	public WebElement getPostPaidLink() {
+		return PostPaidLink;
 	}
 
 }

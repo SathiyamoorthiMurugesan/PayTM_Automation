@@ -1,6 +1,8 @@
 package org.paytm.base;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -10,8 +12,11 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Point;
@@ -28,6 +33,7 @@ import org.testng.annotations.*;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class BaseClass{
@@ -39,6 +45,12 @@ public class BaseClass{
 	public static ExtentHtmlReporter reporter;
 	public static ExtentReports extent;
 	public static ExtentTest logger;
+	public JavascriptExecutor js;
+	
+	public File src;
+	public FileInputStream fis;
+	public XSSFWorkbook WB;
+	public XSSFSheet sheet;
 	
 	public WebDriver getDriver() {
 		return driver;
@@ -48,7 +60,8 @@ public class BaseClass{
 	public  static void initiateReport() {
 		Date date = new Date();
 		SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
-		reporter = new ExtentHtmlReporter("C:\\Users\\sathy\\git\\PayTM_Automatio\\Reports\\MyReport"+dateformat.format(date)+".html");
+//		reporter = new ExtentHtmlReporter(System.getProperty("user.dir")+"")
+		reporter = new ExtentHtmlReporter("C:\\Users\\sathy\\git\\PayTM_Automation\\Reports\\MyReport"+dateformat.format(date)+".html");
 //		reporter = new ExtentHtmlReporter("C:\\Users\\sathy\\git\\PayTM_Automation\\Reports\\reports.html");
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
@@ -103,6 +116,14 @@ public class BaseClass{
 		prop.load(reader);
 	}
 	
+	public void ReadExcel() throws Exception {
+//		propertyReader();
+		File src = new File(prop.getProperty("ExcelFilePath"));
+		FileInputStream fis = new FileInputStream(src);
+		XSSFWorkbook WB = new XSSFWorkbook(fis);
+		XSSFSheet sheet1 = WB.getSheetAt(0);
+		System.out.println("Sheet name is "+sheet1.getSheetName());
+	}
 	
 	public void takeScreenshot() throws Exception {
 		screenshot_path = prop.getProperty("screeshot_path");
@@ -179,10 +200,12 @@ public class BaseClass{
 	}
 	
 	public boolean iselementSelected(WebElement element) {
+		logger.log(Status.PASS, "Element is selected");
 		return element.isSelected();
 	}
 	
 	public boolean iselementEnabled(WebElement element) {
+		
 		return element.isEnabled();
 	}
 	
@@ -404,6 +427,20 @@ public class BaseClass{
 		element.sendKeys(Keys.ENTER);
 	}
 //	have to update scroll down methods
+	public void scrollDownToAnElement(WebElement element) {
+		js = (JavascriptExecutor)getDriver();
+		js.executeScript("arguments[0].scrollIntoView();", element);
+	}
+	
+	public void scrollByAxis(int x, int y) {
+		js = (JavascriptExecutor)getDriver();
+		js.executeScript("window.scrollBy("+x+","+y+")");
+	}
+	
+	public void scrollToBottom() {
+		js = (JavascriptExecutor)getDriver();
+		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+	}
 	
 	
 }

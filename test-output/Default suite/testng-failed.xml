@@ -3,16 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="org.paytm.testcases.PrePaid">
+      <class name="org.paytm.testcases.PostPaidTest">
         <methods>
-          <include name="prepaid_recharge"/>
           <include name="browserSelection"/>
           <include name="initiateReport"/>
+          <include name="postPaid_page_verification"/>
           <include name="tearDown"/>
-          <include name="homepage_playAndWin"/>
           <include name="closeReport"/>
         </methods>
-      </class> <!-- org.paytm.testcases.PrePaid -->
+      </class> <!-- org.paytm.testcases.PostPaidTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
