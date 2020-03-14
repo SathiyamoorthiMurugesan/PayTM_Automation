@@ -1,6 +1,7 @@
 package org.paytm.pages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.paytm.base.BaseClass;
 
@@ -8,6 +9,9 @@ public class LoginPage extends BaseClass{
 	
 	@FindBy(xpath="//*[@class=\"signup-points\"]//p")
 	WebElement loginPayTMBenefits;
+	
+/*	@FindAll(xpath="//*[@class=\"signup-points\"]//p", value = { 		@FindBy })
+	WebElement loginPayTMBenefits111;*/
 	
 	@FindBy (xpath="(//*[@class='text'])[1]")
 	WebElement LoginPayTMFastAndSecureText;
